@@ -5,7 +5,7 @@ function PressableContainer({children, onPress}){
   
   return (
     <View style = {styles.PressableContainer} >
-    <Pressable onPress={onPress} style={styles.UserPRess} android_ripple={{color:'#2c2929'} }  >
+    <Pressable onPress={onPress} style={styles.UserPress} android_ripple={{color:'#2c2929'} }  >
     
           <Text style={styles.PressableText}>{children}</Text>
           
@@ -16,18 +16,21 @@ function PressableContainer({children, onPress}){
 
 export default PressableContainer;
 
-styles = StyleSheet.create({
+const styles = StyleSheet.create({
     PressableContainer:{
         marginHorizontal: 20,
         marginTop: 6,
         borderRadius: 28,
         paddingVertical:15,
-        overflow: 'hidden'
+        overflow: 'hidden',
+        elevation:4,
+        
          },
-         UserPRess:{
+         UserPress:{
           backgroundColor: '#ffffffff',
         borderColor: 'white', 
         borderRadius: 28,
+        
       },
    
         PressableText: {
