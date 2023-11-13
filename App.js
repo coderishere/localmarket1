@@ -43,7 +43,106 @@ export default function App() {
             component={UserProfilePage}
             options={{title:'',  headerBackVisible: false } }
           />
-         
+          <stack.Screen
+            name="UserNotification"
+            component={UserNotification}
+            options={{title:'',  headerBackVisible: false, headerStyle:{backgroundColor:'#717a59'} } }
+          />
+          <stack.Screen
+            name="UserDetailEdit"
+            component={UserDetailEdit}
+            options={{title:''} }
+          />
+          <stack.Screen
+            name="UserMyOrder"
+            component={UserMyOrder}
+            options={{title:'', headerBackVisible: false,  headerStyle:{backgroundColor:'#717a59'}} }
+          />
+           <stack.Screen
+            name="UserKart"
+            component={UserKart}
+            options={{title:'', headerBackVisible: false,  headerStyle:{backgroundColor:'#717a59'}} }
+          />
+           <stack.Screen
+            name="UserAddress"
+            component={UserAddress}
+            options={{title:'', headerBackVisible: false, } }
+          />
+          <stack.Screen
+            name="UserAddNewAddress"
+            component={UserAddNewAddress}
+            options={{title:'', headerBackVisible: false, } }
+          />
+          <stack.Screen
+            name="SellerLogin"
+            component={SellerLogin}
+            options={{ headerShown: false }}
+          />
+          <stack.Screen
+            name="SellerSignupOne"
+            component={SellerSignupOne}
+            options={{ headerShown: false }}
+          />
+          <stack.Screen
+            name="SellerSignupTwo"
+            component={SellersignupTwo}
+            options={{ headerShown: false }}
+          />
+          <stack.Screen
+            name="SellerSignupThree"
+            component={SellersignupThree}
+            options={{ headerShown: false }}
+          />
+          <stack.Screen
+            name="SellerSignupFour"
+            component={SellersignupFour}
+            options={{ headerShown: false }}
+          />
+          <stack.Screen
+            name="SellerSignupFive"
+            component={SellersignupFive}
+            options={{ headerShown: false }}
+          />
+          <stack.Screen
+            name="SellerMainPage"
+            component={SellerMainPage}
+            options={{title:'',  headerBackVisible: false } }
+           />
+           <stack.Screen
+            name="SellerProfilePage"
+            component={SellerProfile}
+            options={{title:'',  headerBackVisible: false } }
+           />
+            <stack.Screen
+            name="SellerEditDetails"
+            component={SellerEditDetails}
+            options={{title:'',  headerBackVisible: false } }
+           />
+           <stack.Screen
+            name="SellerMyOrders"
+            component={SellerMyOrders}
+            options={{title:'', headerBackVisible: false,  headerStyle:{backgroundColor:'#717a59'}} }
+           />
+            <stack.Screen
+            name="SellerNotification"
+            component={SellerNotification}
+            options={{title:'', headerBackVisible: false,  headerStyle:{backgroundColor:'#717a59'}} }
+           />
+            <stack.Screen
+            name="SellerUpdateStock"
+            component={SellerUpdateStock}
+            options={{title:'', headerBackVisible: false,  headerStyle:{backgroundColor:'#717a59'}} }
+           />
+            <stack.Screen
+            name="RespondLater"
+            component={RespondLater}
+            options={{title:'', headerBackVisible: false,  headerStyle:{backgroundColor:'#717a59'}} }
+           />
+             <stack.Screen
+            name="OrderRecieved"
+            component={SellerOrderRecieved}
+            options={{title:'', headerBackVisible: false,  headerStyle:{backgroundColor:'#717a59'}} }
+           />
         </stack.Navigator>
       </NavigationContainer>
     </View>
