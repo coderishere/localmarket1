@@ -11,6 +11,10 @@ function StartingPage({navigation}) {
   function LoginPageHandler(){
        navigation.navigate('loginPage')
   }
+
+  function SellerLoginHandler(){
+    navigation.navigate('SellerLogin')
+  }
   return (
     <View style={styles.Backgroundcontainer}>
     <StatusBar backgroundColor="#ccc" />
@@ -25,8 +29,8 @@ function StartingPage({navigation}) {
         
          
           
-          <PressableContainer onPress={LoginPageHandler}><Ionicons name="caret-forward" size={20}/>USER             </PressableContainer>
-          <PressableContainer><Ionicons name="caret-forward" size={20}/>SELLER</PressableContainer>
+          <PressableContainer onPress={LoginPageHandler}><Ionicons name="caret-forward" size={20}/>USER</PressableContainer>
+          <PressableContainer onPress={SellerLoginHandler}><Ionicons name="caret-forward" size={20}/>SELLER</PressableContainer>
           <PressableContainer><Ionicons name="caret-forward" size={20}/>DELIVERY PARTNER</PressableContainer>
           
          </View>

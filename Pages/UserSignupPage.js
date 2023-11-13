@@ -8,7 +8,7 @@ function SignupPage({navigation}){
     function LoginPageHandler(){
       navigation.navigate('loginPage')
     }
-    function MainPagehandler(){
+    function CategoriesPageHandler(){
       navigation.navigate('Mainpage')
     }
     return( 
@@ -20,7 +20,7 @@ function SignupPage({navigation}){
          <TextInputContainer>Phone Number</TextInputContainer>
          <TextInputContainer>Email Id</TextInputContainer>
          <TextInputContainer>Password</TextInputContainer>
-         <LoginSignupButton onPress={MainPagehandler}>Sign Up</LoginSignupButton>
+         <LoginSignupButton onPress={CategoriesPageHandler}>Sign Up</LoginSignupButton>
          <View style={styles.SignupContainer}>
           <Text style={styles.AlreadyaMemberText}>Already a Member?</Text> 
           <Pressable onPress={LoginPageHandler}>

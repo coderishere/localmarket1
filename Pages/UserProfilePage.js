@@ -1,13 +1,21 @@
-import {View, Text , StyleSheet, Image, ImageBackground, Button, Pressable, Alert} from 'react-native'
+import {ScrollView, View, Text , StyleSheet, Image, ImageBackground, Button, Pressable, Alert, TextInput} from 'react-native'
 import { useLayoutEffect } from 'react';
 import HomePageButton from '../assets/HomePageButon/HomePageButton';
 import { FontAwesome } from '@expo/vector-icons';
 import UserProfileText from '../assets/TextInput/UserProfileText';
 import { MaterialIcons } from '@expo/vector-icons';
+import { FullWindowOverlay } from 'react-native-screens';
 
 
 
 function UserProfilePage({navigation}){
+
+ function EditDetailHandler(){
+  return(
+    navigation.navigate('UserDetailEdit')
+  )
+ }
+
  function HomePageHandler( ){
     
         navigation.navigate('Mainpage')
@@ -21,6 +29,18 @@ function UserProfilePage({navigation}){
   return(
     Alert.alert('Logging Out!!!', 'Are You Sure?',[{style:'cancel'},{text:'okay', onPress:LoggingoutHandler},{text:'cancel'}])
   )
+ }
+
+ function CurrentAddressHandler(){
+  return (
+    navigation.navigate('UserAddress')
+
+  )
+ }
+
+ function MyordersHandler(){
+  console.log('myorders')
+  navigation.navigate('UserMyOrder')
  }
  useLayoutEffect(() => {
     navigation.setOptions({
@@ -39,7 +59,7 @@ function UserProfilePage({navigation}){
 return (
     
       <View style={styles.MainContainer}>
-        
+       
        
        <ImageBackground style={styles.BackgroundImage} source={require('../assets/Images/backgroundblack.png')}>
        <View style = {styles.UserIcon}>
@@ -47,21 +67,31 @@ return (
               </View>
         
         </ImageBackground>
-        <Pressable style={styles.EditIconContainer}>
+        
+        <Pressable style={styles.EditIconContainer} onPress={EditDetailHandler}>
         <FontAwesome name="edit" size={40} color="black" />       
         </Pressable>
         
-     <UserProfileText>Name</UserProfileText>
-     <UserProfileText>Email</UserProfileText>
-     <UserProfileText>Phone</UserProfileText>
-     <UserProfileText>Address</UserProfileText>
-     <UserProfileText>My orders</UserProfileText>
+        <UserProfileText>Name</UserProfileText>
+        <UserProfileText>Email</UserProfileText>
+        <UserProfileText>Phone</UserProfileText>
+        <Pressable onPress={CurrentAddressHandler}>
+        <UserProfileText>Saved Addresses</UserProfileText>
+        </Pressable>
+        <Pressable onPress={MyordersHandler}>
+        <UserProfileText>My orders</UserProfileText>
+        </Pressable>
+        
+    
+       
+        
      
      <View style={styles.LogoutContainer}>
     <Pressable onPress={LogoutHandler}>
     <MaterialIcons style={styles.LogoutText} name="logout" size={24} color="black" />
     </Pressable>
      </View>
+     
       </View>
        
    
@@ -71,7 +101,11 @@ export default UserProfilePage;
 
 const styles = StyleSheet.create({
    MainContainer:{
-     flex:1 
+     flex:1 ,
+    
+   },
+   ScrollViewContainer:{
+    flex:1,
    },
    UserIcon:{
     alignItems:'center',
@@ -93,11 +127,9 @@ const styles = StyleSheet.create({
     borderWidth:1,
     height:45,
     borderRadius: 10,
-  
-
   },
   LogoutText:{
-     paddingHorizontal:60,
+     paddingHorizontal:65,
     paddingTop:10,
     fontWeight:'bold',
     color:'#ffffff'

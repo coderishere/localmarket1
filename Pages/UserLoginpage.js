@@ -1,10 +1,11 @@
-import { View, Text, StyleSheet, Pressable } from "react-native";
+import { View, Text, StyleSheet, Pressable, Dimensions } from "react-native";
 import { FontAwesome } from "@expo/vector-icons";
 import TextInputContainer from "../assets/TextInput/TextInputContainer";
 import LoginSignupButton from "../assets/ButtonContainer/LoginSignupButton";
 
+
 function LoginPage({ navigation }) {
-  function checkhandler() {
+  function ForgotPasswordHandler() {
     console.log("check");
   }
   function SignUpPageHandler() {
@@ -15,34 +16,41 @@ function LoginPage({ navigation }) {
   }
 
   return (
-    <View style={styles.logoContainer}>
+    
+      <View  style={styles.logoContainer}>
       <FontAwesome style={styles.userlogo} name="user-circle" size={150} />
 
-      <TextInputContainer>Email/Phone</TextInputContainer>
+<TextInputContainer>Email/Phone</TextInputContainer>
 
-      <TextInputContainer>Password</TextInputContainer>
+<TextInputContainer>Password</TextInputContainer>
 
-      <Pressable onPress={checkhandler} style={styles.ForgotPasswordContainer}>
-        <Text style={styles.forgotText}>FORGOT PASSWORD?</Text>
-      </Pressable>
-      <LoginSignupButton onPress={MainPageHandler}>LOGIN</LoginSignupButton>
-      <View style={styles.SignupContainer}>
-        <Text style={styles.NotMemberText}>Not a Member?</Text>
-        <Pressable onPress={SignUpPageHandler}>
-          <Text style={styles.SignupText}>Sign Up?</Text>
-        </Pressable>
+<Pressable onPress={ForgotPasswordHandler} style={styles.ForgotPasswordContainer}>
+  <Text style={styles.forgotText}>FORGOT PASSWORD?</Text>
+</Pressable>
+<LoginSignupButton onPress={MainPageHandler}>LOGIN</LoginSignupButton>
+<View style={styles.SignupContainer}>
+  <Text style={styles.NotMemberText}>Not a Member?</Text>
+  <Pressable onPress={SignUpPageHandler}>
+    <Text style={styles.SignupText}>Sign Up?</Text>
+  </Pressable>
+</View>
       </View>
-    </View>
+      
+   
   );
 }
 
 export default LoginPage;
 
 const styles = StyleSheet.create({
+ 
   logoContainer: {
     flex:1,
     alignItems: "center",
     backgroundColor: "#ffffff",
+    borderWidth:1,
+    height:100,
+    elevation:4
   },
   userlogo: {
     marginVertical: 100,
@@ -71,5 +79,6 @@ const styles = StyleSheet.create({
   },
   SignupText: {
     color: "#2653e9",
+    
   },
 });
