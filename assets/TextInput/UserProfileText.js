@@ -1,4 +1,4 @@
-import { Text,View, StyleSheet, Button } from "react-native";
+import { Text,View, StyleSheet, Button, TextInput } from "react-native";
 
 
 function UserProfileText({children}){
@@ -21,9 +21,9 @@ const styles = StyleSheet.create({
         height:45,
         borderRadius: 28,
         marginBottom:20,
-        marginHorizontal:10
+        marginHorizontal:10,
        },
-       Text:{
-        fontWeight:'bold'
-       }
+      Text:{
+           fontWeight:'500'
+      }
 })
